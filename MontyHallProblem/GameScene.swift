@@ -581,21 +581,21 @@ class GameScene: SKScene {
                     if (switchOrStay == true) {
                         
                         if (nodeAtPoint.name == "doorOne") {
-                            println("doorOne tapped in switchOrStay")
+//                            println("doorOne tapped in switchOrStay")
                             playerDoorSelection = 0
                             playerPickedDoorPosition = location
                             createOrUpdateSelectionSprite()
                             didPlayerSwitch()
                         }
                         else if (nodeAtPoint.name == "doorTwo") {
-                            println("doorTwo tapped in switchOrStay")
+//                            println("doorTwo tapped in switchOrStay")
                             playerDoorSelection = 1
                             playerPickedDoorPosition = location
                             createOrUpdateSelectionSprite()
                             didPlayerSwitch()
                         }
                         else if (nodeAtPoint.name == "doorThree") {
-                            println("doorThree tapped in switchOrStay")
+//                            println("doorThree tapped in switchOrStay")
                             playerDoorSelection = 2
                             playerPickedDoorPosition = location
                             createOrUpdateSelectionSprite()
@@ -613,7 +613,7 @@ class GameScene: SKScene {
                     if (chooseInitialDoor == true) {
                         
                         if (nodeAtPoint.name == "doorOne") {
-                            println("doorOne tapped in chooseInitialDoor")
+//                            println("doorOne tapped in chooseInitialDoor")
                             playerDoorSelection = 0
                             removeInitialDoorChoiceFromDoorArrays()
                             createOrUpdateSelectionSprite()
@@ -622,7 +622,7 @@ class GameScene: SKScene {
                             
                         }
                         else if (nodeAtPoint.name == "doorTwo") {
-                            println("doorTwo tapped in chooseInitialDoor")
+//                            println("doorTwo tapped in chooseInitialDoor")
                             playerDoorSelection = 1
                             removeInitialDoorChoiceFromDoorArrays()
                             createOrUpdateSelectionSprite()
@@ -631,7 +631,7 @@ class GameScene: SKScene {
 
                         }
                         else if (nodeAtPoint.name == "doorThree") {
-                            println("doorThree tapped in chooseInitialDoor")
+//                            println("doorThree tapped in chooseInitialDoor")
                             playerDoorSelection = 2
                             removeInitialDoorChoiceFromDoorArrays()
                             createOrUpdateSelectionSprite()
