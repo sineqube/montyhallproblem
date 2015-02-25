@@ -273,7 +273,7 @@ class GameScene: SKScene {
         doorThree?.name = "doorThree"
         
         // Add doors to array
-        if doorOne != nil && doorTwo != nil && doorThree != nil {
+        if (doorOne != nil) && (doorTwo != nil) && (doorThree != nil) {
             
             doorArray.append(doorOne!)
             doorArray.append(doorTwo!)
@@ -301,7 +301,6 @@ class GameScene: SKScene {
         doorPosArrayA = doorPosArray
         doorPosArrayB = doorPosArray
         
-//        println("doorPosArray = \(doorPosArray)")
     }
     
     func makeInstructionsLabel() {
@@ -438,13 +437,13 @@ class GameScene: SKScene {
     func didPlayerSwitch() {
         
         if (playerDoorSelection != previousDoorSelection) {
-            println("player switched!")
+//            println("player switched!")
             numberOfSwitches += 1
             playerDidSwitch = true
             switchesLabel?.text = "Switches: \(numberOfSwitches)"
         }
         else {
-            println("player stayed!")
+//            println("player stayed!")
             numberOfStays += 1
             playerDidStay = true
             staysLabel?.text = "Stays: \(numberOfStays)"
@@ -466,10 +465,8 @@ class GameScene: SKScene {
         background.addChild(goatTwoSprite!)
         
         doorArray.removeAtIndex(randomChoice)
-        
         doorPosArrayC.removeAtIndex(randomChoice)
-//        println("doorArray = \(doorArray)")
-//        println("doorPosArrayC = \(doorPosArrayC)")
+
         
         motoSprite = SKSpriteNode(imageNamed: "sv650PicSmall.jpeg")
         motoSprite?.name = "motoSprite"
@@ -508,7 +505,6 @@ class GameScene: SKScene {
         
         calculatePercentageOfWins()
         calculateSwitchStayWinPercentage()
-        
     }
     
     func calculatePercentageOfWins() {
@@ -518,7 +514,6 @@ class GameScene: SKScene {
         var winsPercStrFormatted = NSString(format: "Win %%: %.1f", percentageOfWins * 100)
         
         winsPercentageLabel?.text = winsPercStrFormatted
-        
     }
     
     func calculateSwitchStayWinPercentage() {
@@ -529,28 +524,23 @@ class GameScene: SKScene {
         var winPercBySwitch:Double = (Double(numberOfWinsBySwitching) / Double(numberOfWins)) * percentageOfWins
         var winPercByStay:Double = (Double(numberOfWinsByStaying) / Double(numberOfWins)) * percentageOfWins
         
-        println("winPercBySwitch = \(winPercBySwitch)")
-        println("winPercByStay = \(winPercByStay)")
-        
         var switchStrFormatted = NSString(format: "Win %% by switch: %.1f", winPercBySwitch * 100)
         var stayStrFormatted = NSString(format: "Win %% by stay: %.1f", winPercByStay * 100)
         
         // Checking for NaN?
         if winPercBySwitch.isNaN == false {
-//            switchPercentageLabel?.text = "Win % by switch: \(winPercBySwitch)"
             switchPercentageLabel?.text = switchStrFormatted
         }
         if winPercByStay.isNaN == false {
-//            stayPercentageLabel?.text = "Win % by stay: \(winPercByStay)"
             stayPercentageLabel?.text = stayStrFormatted
         }
-        
-        
     }
     
     override func update(currentTime: CFTimeInterval) {
         
         if (currentTime - previousTime > 2) {
+            
+            // Unused for now
             
 //            println("time is \(currentTime)")
             previousTime = currentTime
@@ -648,7 +638,6 @@ class GameScene: SKScene {
                         chooseInitialDoorFunc()
                     }
                 }
-                
             }
         }
     }
